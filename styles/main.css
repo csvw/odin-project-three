@@ -9,7 +9,7 @@
 canvas {
     position: absolute;
     z-index: -1;
-    background-color: white;
+    background: hsla(219, 94, 31, 1);
 }
 
 html, body {
@@ -17,18 +17,73 @@ html, body {
     width: 100%;
 }
 
-.mainContainer {
+#backupBackground {
+    height: 100%;
+    width: 100%;
+    background: hsla(219, 94, 31, 1);
+}
+
+#mainContainer {
     height: 100%;
     width: 100%;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 0, 0, 0);
+    background: hsla(0, 0, 0, 0);
 }
 
-.gameContainer {
+#gameContainer {
     height: 80%;
     width: 80%;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.0);
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-text {
+    color: white;
+    font-size: 4rem;
+    padding: 25px;
+    text-align: center;
+}
+
+.fade-in {
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+@keyframes fade-in {
+    from {
+        color: rgba(255, 255, 255, 0);
+        webkit-filter: blur(25px);
+        filter: blur(25px);
+    }
+    to {
+        color: rgba(255, 255, 255, 1);
+        webkit-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+.fade-out {
+    animation-name: fade-out;
+    animation-duration: 1s;
+}
+
+@keyframes fade-out {
+    from {
+        color: rgba(255, 255, 255, 1);
+        webkit-filter: blur(0px);
+        filter: blur(0px);
+    }
+    to {
+        color: rgba(255, 255, 255, 0);
+        webkit-filter: blur(25px);
+        filter: blur(25px);
+    }
 }

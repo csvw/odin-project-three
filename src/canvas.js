@@ -41,7 +41,8 @@ class RectangleManager {
     }
 
     draw(timeStamp) {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.ctx.fillStyle = 'hsla(219, 94%, 31%, 1)';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         for(let i = 0; i < this.rectangles.length; i++) {
             this.drawRect(i, timeStamp);
         }
@@ -52,7 +53,7 @@ class RectangleManager {
     }
 
     dampenMainDisplay() {
-        this.ctx.fillStyle = "rgba(245, 245, 245, 0.85)";
+        this.ctx.fillStyle = "hsla(219, 94%, 25%, 0.94)";
         this.ctx.fillRect(
             this.canvas.width - this.canvas.width * .8 * .5 - this.canvas.width / 2,
             this.canvas.height - this.canvas.height * .8 * .5 - this.canvas.height / 2,
@@ -88,7 +89,6 @@ class RectangleManager {
             rect.animFrame += (timeStamp - rect.timeStamp);
             rect.timeStamp = timeStamp;
         }
-        if(i == 0) console.log(rect.color.a)
         rect.color.a = -Math.pow((rect.animFrame/rect.animLen - 1/2), 2) * 4 * rect.color.maxAlpha + rect.color.maxAlpha;
         rect.loc.x += rect.vector.dx;
         rect.loc.y += rect.vector.dy;
@@ -114,10 +114,10 @@ class RectangleManager {
 
     generateColor() {
         let params = {};
-        params.h = Math.floor(Math.random() * 359);
-        params.l = 40 + Math.floor(Math.random() * 20);
+        params.h = Math.floor(165 + Math.random() * 70);
+        params.l = 45 + Math.floor(Math.random() * 15);
         params.a = 0;
-        params.maxAlpha = 0.8;
+        params.maxAlpha = 0.7;
         return params;
     }
 
