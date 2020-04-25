@@ -230,7 +230,23 @@ button:hover {
 .advice {
     color: white;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     line-height: 2rem;
     padding: 20px;
+}
+
+.red {
+    color: red;
+}
+
+.white {
+    color: white;
+}
+
+.green {
+    color: green;
+}
+
+.gold {
+    color: gold;
 }

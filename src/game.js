@@ -69,6 +69,7 @@ class Game {
         this.randomChoice = this.randomChoice.bind(this);
         this.updatetheWar = this.updateTheWar.bind(this);
         this.setHiddenChoice = this.setHiddenChoice.bind(this);
+        this.setElementColorClass = this.setElementColorClass.bind(this);
     }
 
     initButtons() {
@@ -97,6 +98,7 @@ class Game {
         this.advisor.classList.remove('hidden');
         this.advisor.classList.add('flex-center');
         this.advice = document.getElementById('advice');
+        this.advice.classList.add('gold');
         this.advice.classList.add('advice');
         this.adviceText = document.createTextNode(`I am your advisor. You may trust me. Choose ${this.getWrongChoice(this.computerChoiceText)}.`);
         this.advice.appendChild(this.adviceText);
@@ -136,10 +138,13 @@ class Game {
     updateTheWar() {
         if(this.cumulativeScore > 0) {
             this.theWar.innerText = "Winning!";
+            this.setElementColorClass(this.theWar, 'green');
         }else if(this.cumulativeScore < 0) {
             this.theWar.innerText = "Losing!";
+            this.setElementColorClass(this.theWar, 'red');
         } else {
             this.theWar.innerText = "Tied!";
+            this.setElementColorClass(this.theWar, 'white');
         }
     }
 
@@ -162,6 +167,17 @@ class Game {
             }
         }
         return adviceList[currentResult](this.computerChoiceText);
+    }
+
+    setElementColorClass(elem, colClass) {
+        let colors = ['red', 'green', 'white'];
+        for(let i = 0; i < colors.length; i++) {
+            if(colors[i] == colClass) {
+                elem.classList.add(colors[i]);
+            } else {
+                elem.classList.remove(colors[i]);
+            }
+        }
     }
 
     updateAdvisor(adviceList) {
@@ -197,6 +213,8 @@ class Game {
         this.updateScore();
         this.blameThePlayer();
         this.victoryStatus.innerText = "Defeat!";
+        this.setElementColorClass(this.victoryStatus, 'red');
+
     }
 
     victory() {
@@ -204,11 +222,13 @@ class Game {
         this.updateScore();
         this.takeAllTheCredit();
         this.victoryStatus.innerText = "Victory!";
+        this.setElementColorClass(this.victoryStatus, 'green');
     }
 
     tie() {
         this.doubtThePlayer();
         this.victoryStatus.innerText = "A Tie!";
+        this.setElementColorClass(this.victoryStatus, 'white');
     }
 
     setHiddenChoice(choice) {
