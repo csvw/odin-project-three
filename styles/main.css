@@ -30,7 +30,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: hsla(0, 0, 0, 0);
+    background: hsla(0, 0%, 0%, 0.0);
 }
 
 #gameContainer {
@@ -43,6 +43,7 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .big-text {
@@ -50,6 +51,20 @@ html, body {
     font-size: 4rem;
     padding: 25px;
     text-align: center;
+}
+
+.medium-big-text {
+    color: white;
+    font-size: 3rem;
+    padding: 20px;
+    text-align: center;
+}
+
+.medium-text {
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    padding: 20px;
 }
 
 .fade-in {
@@ -86,4 +101,136 @@ html, body {
         webkit-filter: blur(25px);
         filter: blur(25px);
     }
+}
+
+.hidden {
+    display: none;
+}
+
+.gameBoard {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 40%;
+    margin: 20px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.boardBlock {
+    height: 100%;
+    width: 40%;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.buttons {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+}
+
+button {
+    width: 20%;
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+.display-computer-choice {
+    width: 20%;
+    height: 40%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+}
+
+button:hover {
+    border: 1px solid white;
+}
+
+.scissors {
+    background-image: url('../images/scissors.png');
+}
+
+.rock {
+    background-image: url('../images/hexagon.png');
+}
+
+.paper {
+    background-image: url('../images/rectangle.png');
+}
+
+#victoryStatus {
+    width: 33%;
+}
+
+#score {
+    width: 33%;
+}
+
+#theWar {
+    width: 33%;
+}
+
+#computerChoice {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.5);
+}
+
+#scoreBoard {
+    height: 15%;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.flex-center-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#advisor {
+    height: 15%;
+    width: 80%;
+    background: rgba(0, 0, 0, 0.15);
+    margin: 20px;
+}
+
+.questionMark {
+    color: white;
+    font-size: 3rem;
+}
+
+.instructions {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1rem;
+    position: absolute;
+    top: 80%;
+}
+
+.advice {
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding: 20px;
 }

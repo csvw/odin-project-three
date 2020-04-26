@@ -12,7 +12,30 @@
                 Your browser does not support the HTML5 canvas tag.
             </canvas>
             <div id="gameContainer">
-
+                <h1 class="medium-big-text hidden" id="gameHeader">Choose <span>Wisely</span></h1>
+                <div class="hidden" id="gameBoard">
+                    <div id="humanPlayer" class="boardBlock hidden">
+                        <h1 class="medium-text">You, The Wise One</h1>
+                        <div class="buttons">
+                            <button id="rock" class="rock">
+                            <button id="paper" class="paper">
+                            <button id="scissors" class="scissors">
+                        </div>
+                    </div>
+                    <div id="computerPlayer" class="boardBlock hidden">
+                        <h1 class="medium-text">Just a Dumb Computer</h1>
+                        <div id="computerChoice">
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden" id="scoreBoard">
+                    <div id="victoryStatus" class="medium-text"></div>
+                    <div id="score" class="medium-text"></div>
+                    <div id="theWar" class="medium-text"></div>
+                </div>
+                <div class="hidden" id="advisor">
+                    <p id="advice"></p>
+                </div>
             </div>
         </div>
     </body>
